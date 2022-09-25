@@ -4,7 +4,7 @@
     Access Twilio
 </a>
 
-## Send
+## Send Example
 
 <div align="center" width="100%">
     <img src="./captura.png" alt="image"/>
