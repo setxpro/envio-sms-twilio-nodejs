@@ -1,14 +1,9 @@
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.AUTH_TOKEN;
-const client = require("twilio")(accountSid, authToken);
+const express = require("express");
+const routes = require("./routes");
 
-client.messages
-  .create({
-    body: "Olá mundo!",
-    from: process.env.TWILIO_NUMBER,
-    to: "+5521966077757", // meu numero cadastrado
-    /**
-     * Para fazer envio para outros numeros é necessário adquirir a versão paga
-     */
-  })
-  .then((message) => console.log(message.sid));
+const app = express();
+
+app.use(express.json());
+app.use(routes);
+
+app.listen(3333);
